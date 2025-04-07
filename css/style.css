@@ -70,11 +70,12 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-content: space-between;
     background: #ebb3f4;
     border-radius: 35px;
     width: 800px;
     height: 800px;
-    margin: 0 auto;
+    margin: 30px auto;
 }
 
 .playground__cell {
@@ -83,6 +84,17 @@ button {
     background: #f3e5e5;
     border-radius: 35px;
     box-shadow: 4px 4px 6.3px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+
+    & .x-mark {
+        align-self: center;
+        height: 200px;
+    }
+    & .o-mark {
+        align-self: flex-start;
+        height: 225px;
+    }
 }
 
 .control-panel {
