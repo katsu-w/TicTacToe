@@ -14,7 +14,6 @@ body {
     height: 100vh;
     padding: 30px 0;
     background: linear-gradient(125.574deg, #F3D7EE 0%, #E7A4F4 100%) no-repeat;
-    overflow: hidden;
 }
 
 button {
@@ -169,6 +168,8 @@ button {
         height: 650px;
     }
     .playground__cell {
+        border-radius: 25px;
+        
         & .x-mark {
             height: 150px;
         }
@@ -209,6 +210,8 @@ button {
         margin: 10px auto;
     }
     .playground__cell {
+        border-radius: 20px;
+
         & .x-mark {
             height: 125px;
         }
@@ -249,6 +252,8 @@ button {
 
     }
     .playground__cell {
+        border-radius: 10px;
+
         & .x-mark {
             height: 70%;
         }
