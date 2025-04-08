@@ -103,6 +103,10 @@ button {
     }
 }
 
+.cell__mark {
+    pointer-events: none;
+}
+
 .control-panel {
     display: flex;
     justify-content: space-between;
