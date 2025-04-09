@@ -22,16 +22,16 @@
                 <a href="https://github.com/katsuAZ" target="_blank" class="header__link"><img src="source/github-icon.svg" alt="github link"></a>
             </div>
         </header>
-        <main class="playground">
-            <div class="playground__cell" id="playgroundCell1"><img src="source/x-mark.svg" class="cell__mark x-mark" alt="X"></div>
-            <div class="playground__cell" id="playgroundCell2"><img src="source/o-mark.svg" class="cell__mark o-mark" alt="X"></div>
-            <div class="playground__cell" id="playgroundCell3"></div>
-            <div class="playground__cell" id="playgroundCell4"></div>
-            <div class="playground__cell" id="playgroundCell5"></div>
-            <div class="playground__cell" id="playgroundCell6"></div>
-            <div class="playground__cell" id="playgroundCell7"></div>
-            <div class="playground__cell" id="playgroundCell8"></div>
-            <div class="playground__cell" id="playgroundCell9"></div>
+        <main class="playground" id="playground">
+            <div class="playground__cell"><div class="cell__mark x-mark"></div></div>
+            <div class="playground__cell"><div class="cell__mark o-mark"></div></div>
+            <div class="playground__cell"></div>
+            <div class="playground__cell"></div>
+            <div class="playground__cell"></div>
+            <div class="playground__cell"></div>
+            <div class="playground__cell"></div>
+            <div class="playground__cell"></div>
+            <div class="playground__cell"></div>
         </main>
         <section class="control-panel">
             <button class="control-panel__button" id="shopButton">Shop</button>
@@ -40,6 +40,9 @@
         </section>
     </div>
 
+    <div class="modal-window" id="modal">
+        <h3 class="modal-window__text">Need to start game!</h3>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

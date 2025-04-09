@@ -95,10 +95,16 @@ button {
     cursor: pointer;
 
     & .x-mark {
+        background: url(../source/x-mark.svg) no-repeat center;
+        background-size: contain;
         height: 200px;
+        width: 200px;
     }
     & .o-mark {
+        background: url(../source/o-mark.svg) no-repeat center;
+        background-size: contain;
         height: 225px;
+        width: 200px;
     }
 }
 
@@ -129,7 +135,58 @@ button {
 
     & span {
         color: #aa51de;
+        cursor: default;
     }
+}
+
+/* animations */
+
+.header__link {
+    transition: 0.3s ease;
+    &:hover {
+        box-shadow: 2px 2px 6.3px 0px rgba(0, 0, 0, 0.25);
+    }
+    &:active {
+        transform: scale(1.1);
+    }
+}
+
+.playground__cell {
+    transition: 0.2s ease;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &:active {
+        transform: scale(1);
+    }
+}
+
+.control-panel__button {
+    transition: 0.3s ease-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &:active {
+        transform: scale(1);
+    }
+}
+
+.modal-window {
+    width: 600px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C676F4;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+.modal-window__text {
+    color: #fff;
 }
 
 /* media queries */
@@ -155,6 +212,9 @@ button {
         & .o-mark {
             height: 200px;
         }
+    }
+    .modal-window {
+        width: 550px;
     }
 }
 
@@ -223,6 +283,11 @@ button {
     .control-panel__button, .control-panel__counter {
         height: 40px;
     }
+
+    .modal-window {
+        width: 450px;
+        height: 150px;
+    }
 }
 
 @media (max-width: 600px) or (max-height: 680px) {
@@ -238,6 +303,10 @@ button {
         & .o-mark {
             height: 125px;
         }
+    }
+
+    .modal-window {
+        width: 350px;
     }
 }
 
@@ -265,6 +334,11 @@ button {
     .control-panel__button, .control-panel__counter {
         height: 30px;
         border-radius: 10px;
+    }
+
+    .modal-window {
+        width: 250px;
+        height: 100px;
     }
 }
 
@@ -297,5 +371,15 @@ button {
     }
     .control-panel__button, .control-panel__counter span {
         font-size: 14px;
+    }
+
+    .modal-window {
+        width: 200px;
+    }
+}
+
+@media (orientation: portrait) {
+    body {
+        padding-bottom: 60px;
     }
 }
