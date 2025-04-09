@@ -172,6 +172,10 @@ button {
   }
 }
 
+#shopButton {
+  opacity: 60%;
+}
+
 .modal-window {
   width: 600px;
   height: 200px;
@@ -188,6 +192,7 @@ button {
 }
 .modal-window__text {
   color: #fff;
+  cursor: default;
 }
 
 /* media queries */
