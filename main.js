@@ -40,16 +40,18 @@ startButton.addEventListener('click', () => {
 
 playgroundCells.forEach((element) => {
     element.addEventListener('click', function () {
-        if (!element.firstChild) {
-            let newMark = document.createElement("div");
-            element.append(newMark);
-            newMark.classList.add('cell__mark');
-            if (firstPlayerTurn) {
-                newMark.classList.add('x-mark');
-                firstPlayerTurn = false;
-            } else {
-                newMark.classList.add('o-mark');
-                firstPlayerTurn = true;
+        if (gameStarted) {
+            if (!element.firstChild) {
+                let newMark = document.createElement("div");
+                element.append(newMark);
+                newMark.classList.add('cell__mark');
+                if (firstPlayerTurn) {
+                    newMark.classList.add('x-mark');
+                    firstPlayerTurn = false;
+                } else {
+                    newMark.classList.add('o-mark');
+                    firstPlayerTurn = true;
+                }
             }
         }
     });
