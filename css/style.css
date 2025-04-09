@@ -129,6 +129,39 @@ button {
 
     & span {
         color: #aa51de;
+        cursor: default;
+    }
+}
+
+/* animations */
+
+.header__link {
+    transition: 0.3s ease;
+    &:hover {
+        box-shadow: 2px 2px 6.3px 0px rgba(0, 0, 0, 0.25);
+    }
+    &:active {
+        transform: scale(1.1);
+    }
+}
+
+.playground__cell {
+    transition: 0.2s ease;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &:active {
+        transform: scale(1);
+    }
+}
+
+.control-panel__button {
+    transition: 0.3s ease-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &:active {
+        transform: scale(1);
     }
 }
 
