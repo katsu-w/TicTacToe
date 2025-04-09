@@ -36,8 +36,13 @@ startButton.addEventListener('click', () => {
 
 playgroundCells.forEach((element) => {
     element.addEventListener('click', function () {
-        let newMark = document.createElement("div");
-        element.append(newMark);
-        newMark.classList.add('cell__mark');
+        if (!element.firstChild) {
+            console.log('ok');
+            let newMark = document.createElement("div");
+            element.append(newMark);
+            newMark.classList.add('cell__mark');
+        } else {
+            console.log('wtf');
+        }
     });
 });
