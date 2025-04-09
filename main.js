@@ -14,12 +14,10 @@ let firstPlayerTurn = true;
 
 function clearCells() {
     let marks = document.getElementsByClassName('cell__mark');
-    console.log(marks.lenght);
+    
     if (marks.length > 0) {
         for (let i = 0; marks.length != 0; i++) {
             marks[0].remove();
-            console.log(i);
-            console.log(marks);
         }
     }
 }
