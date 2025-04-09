@@ -95,10 +95,16 @@ button {
     cursor: pointer;
 
     & .x-mark {
+        background: url(../source/x-mark.svg) no-repeat center;
+        background-size: contain;
         height: 200px;
+        width: 200px;
     }
     & .o-mark {
+        background: url(../source/o-mark.svg) no-repeat center;
+        background-size: contain;
         height: 225px;
+        width: 200px;
     }
 }
 
