@@ -1,8 +1,10 @@
-// Connect all buttons
+// Connect all buttons and elements
 
 const startButton = document.getElementById('startButton');
 const shopButton = document.getElementById('shopButton');
 const playgroundCells = document.querySelectorAll('.playground__cell');
+const modal = document.getElementById('modal');
+
 // Global values
 
 let gameStarted = false;
@@ -29,10 +31,12 @@ startButton.addEventListener('click', () => {
         startButton.textContent = "Start game";
         clearCells();
         gameStarted = false;
+        modal.style.display = "flex";
     } else {
         startButton.textContent = "Retry";
         clearCells();
         gameStarted = true;
+        modal.style.display = "none";
     }
 });
 
