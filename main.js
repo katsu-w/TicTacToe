@@ -1,9 +1,9 @@
 // Connect all buttons and elements
 
-const startButton = document.getElementById('startButton');
-const shopButton = document.getElementById('shopButton');
-const playgroundCells = document.querySelectorAll('.playground__cell');
-const modal = document.getElementById('modal');
+const startButton = document.getElementById("startButton");
+const shopButton = document.getElementById("shopButton");
+const playgroundCells = document.querySelectorAll(".playground__cell");
+const modal = document.getElementById("modal");
 
 // Global values
 
@@ -13,48 +13,48 @@ let firstPlayerTurn = true;
 // Clear cells function
 
 function clearCells() {
-    let marks = document.getElementsByClassName('cell__mark');
-    
-    if (marks.length > 0) {
-        for (let i = 0; marks.length != 0; i++) {
-            marks[0].remove();
-        }
+  let marks = document.getElementsByClassName("cell__mark");
+
+  if (marks.length > 0) {
+    for (let i = 0; marks.length != 0; i++) {
+      marks[0].remove();
     }
+  }
 }
 
 // Start button listener
 
-startButton.addEventListener('click', () => {
-    if (gameStarted) {
-        startButton.textContent = "Start game";
-        clearCells();
-        gameStarted = false;
-        modal.style.display = "flex";
-    } else {
-        startButton.textContent = "Retry";
-        clearCells();
-        gameStarted = true;
-        modal.style.display = "none";
-    }
+startButton.addEventListener("click", () => {
+  if (gameStarted) {
+    startButton.textContent = "Start game";
+    clearCells();
+    gameStarted = false;
+    modal.style.display = "flex";
+  } else {
+    startButton.textContent = "Retry";
+    clearCells();
+    gameStarted = true;
+    modal.style.display = "none";
+  }
 });
 
 // Add mark function
 
 playgroundCells.forEach((element) => {
-    element.addEventListener('click', function () {
-        if (gameStarted) {
-            if (!element.firstChild) {
-                let newMark = document.createElement("div");
-                element.append(newMark);
-                newMark.classList.add('cell__mark');
-                if (firstPlayerTurn) {
-                    newMark.classList.add('x-mark');
-                    firstPlayerTurn = false;
-                } else {
-                    newMark.classList.add('o-mark');
-                    firstPlayerTurn = true;
-                }
-            }
+  element.addEventListener("click", function () {
+    if (gameStarted) {
+      if (!element.firstChild) {
+        let newMark = document.createElement("div");
+        element.append(newMark);
+        newMark.classList.add("cell__mark");
+        if (firstPlayerTurn) {
+          newMark.classList.add("x-mark");
+          firstPlayerTurn = false;
+        } else {
+          newMark.classList.add("o-mark");
+          firstPlayerTurn = true;
         }
-    });
+      }
+    }
+  });
 });
