@@ -6,14 +6,18 @@ const playgroundCells = document.querySelectorAll('.playground__cell');
 // Global values
 
 let gameStarted = false;
+let firstPlayerTurn = true;
 
 // Clear cells function
 
 function clearCells() {
     let marks = document.getElementsByClassName('cell__mark');
+    console.log(marks.lenght);
     if (marks.length > 0) {
-        for (let i = 0; i <= marks.length; i++) {
+        for (let i = 0; marks.length != 0; i++) {
             marks[0].remove();
+            console.log(i);
+            console.log(marks);
         }
     }
 }
@@ -37,12 +41,16 @@ startButton.addEventListener('click', () => {
 playgroundCells.forEach((element) => {
     element.addEventListener('click', function () {
         if (!element.firstChild) {
-            console.log('ok');
             let newMark = document.createElement("div");
             element.append(newMark);
             newMark.classList.add('cell__mark');
-        } else {
-            console.log('wtf');
+            if (firstPlayerTurn) {
+                newMark.classList.add('x-mark');
+                firstPlayerTurn = false;
+            } else {
+                newMark.classList.add('o-mark');
+                firstPlayerTurn = true;
+            }
         }
     });
 });
