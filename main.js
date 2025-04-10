@@ -4,11 +4,13 @@ const startButton = document.getElementById("startButton");
 const shopButton = document.getElementById("shopButton");
 const playgroundCells = document.querySelectorAll(".playground__cell");
 const modal = document.getElementById("modal");
+const turnCounter = document.getElementById("turnCounter");
 
 // Global values
 
 let gameStarted = false;
 let firstPlayerTurn = true;
+let counter = 0;
 
 // Clear cells function
 
@@ -22,12 +24,20 @@ function clearCells() {
     }
 }
 
+// Refresh turn counter
+
+function refreshCounter(count) {
+    turnCounter.innerHTML = "Turn counter: " + count;
+}
+
 // Start button listener
 
 startButton.addEventListener("click", () => {
     if (gameStarted) {
         startButton.textContent = "Start game";
         clearCells();
+        counter = 0;
+        refreshCounter(counter);
         gameStarted = false;
         modal.style.display = "flex";
     } else {
@@ -54,6 +64,9 @@ playgroundCells.forEach((element) => {
                     newMark.classList.add("o-mark");
                     firstPlayerTurn = true;
                 }
+
+                counter++;
+                refreshCounter(counter);
             }
         }
     });
