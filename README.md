@@ -1,1 +1,1 @@
-https://katsu-ц.github.io/TicTacToe/
+https://katsu-w.github.io/TicTacToe/
